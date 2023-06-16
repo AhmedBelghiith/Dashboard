@@ -1,0 +1,46 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title ">Association Table</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="text-primary">
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Created Date</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let association of filteredAssociations">
+                                    <td>{{ association.name }}</td>
+                                    <td>{{ association.phoneNumber }}</td>
+                                    <td>{{ association?.createdDate }}</td>
+                                    <td>{{ association?.adress }}</td>
+                                    <td>{{ association.email }}</td>
+                                    <td>
+                                        <button mat-raised-button type="button" matTooltip="Edit Task"
+                                            [matTooltipPosition]="'above'"
+                                            class="btn btn-primary btn-link btn-sm btn-just-icon"
+                                            (click)=" openAssociationDialog(association)">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove"
+                                            [matTooltipPosition]="'above'"
+                                            class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons" (click)="onDelete(association.id)">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

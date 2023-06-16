@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Edit Association</h1>
+<div mat-dialog-content>
+    <form (ngSubmit)="saveAssociation()">
+        <mat-form-field>
+            <input matInput [(ngModel)]="association.name" name="name" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="association.phoneNumber" minlength="0" maxlength="8" type="number"
+                name="phoneNumber" placeholder="Phone Number">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="association.adress" name="adress" placeholder="adress">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="association.email" name="email" placeholder="Email">
+        </mat-form-field>
+
+
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="cancelDialog()">Cancel</button>
+    <button mat-button color="primary" (click)="saveAssociation()">Save</button>
+</div>
